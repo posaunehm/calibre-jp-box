@@ -1,0 +1,16 @@
+name: calibre-jp
+version: 0.0.1
+inherits: wercker/nodejs@@1.4.1
+type: main
+platform: ubuntu@12.04
+description: gitbook build environment in Japanese
+keywords:
+  - gitbook
+  - calibre
+script: |
+    sudo apt-get update
+    sudo apt-get install language-pack-ja
+    sudo update-locale LANG=ja_JP.UTF-8
+    sudo apt-get install ttf-takao*
+    sudo sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+    sudo npm install gitbook-cli -g
