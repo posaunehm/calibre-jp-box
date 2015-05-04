@@ -1,6 +1,6 @@
 name: calibre-jp
 version: 0.0.1
-inherits: wercker/nodejs@@1.4.1
+inherits: wercker/nodejs@1.4.1
 type: main
 platform: ubuntu@12.04
 description: gitbook build environment in Japanese
